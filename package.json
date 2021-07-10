@@ -1,0 +1,54 @@
+{
+	"name": "new-react-component",
+	"displayName": "New React component",
+	"description": "Create new React components from templates",
+	"version": "0.1.1",
+  "publisher": "Acke Strömberg",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/anst9000/VS-Code-Extension-Create-React-Component.git"
+	},
+  "engines": {
+		"vscode": "^1.58.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:new-react-component.createComponent"
+	],
+	"icon": "icon.png",
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "new-react-component.createComponent",
+				"title": "New React component"
+			}
+		],
+    "menus": {
+			"explorer/context": [
+				{
+					"command": "new-react-component.createComponent",
+					"group": "2_workspace"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.58.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"eslint": "^7.27.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2"
+	}
+}
